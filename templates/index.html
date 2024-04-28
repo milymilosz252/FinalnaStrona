@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strona Główna</title>
+</head>
+<body>
+    <header>
+        {% if username %}
+        <p>Witaj, {{ username }}!</p>
+        {% endif %}
+        <!-- Dodatkowe elementy nagłówka -->
+    </header>
+    <main>
+        <h1><a href="/galeria">Galeria</a></h1>
+    </main>
+    <footer>
+        <!-- Stopka strony -->
+    </footer>
+</body>
+</html>

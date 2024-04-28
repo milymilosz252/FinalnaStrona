@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weryfikacja</title>
+</head>
+<body>
+    <h2>Weryfikacja kodu autoryzacyjnego</h2>
+    <form method="POST" action="/verify">
+        <label for="auth_code">Kod autoryzacyjny:</label><br>
+        <input type="text" id="auth_code" name="auth_code" required><br><br>
+        <input type="submit" value="Zweryfikuj">
+    </form>
+</body>
+</html>

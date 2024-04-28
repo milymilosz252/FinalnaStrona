@@ -1,0 +1,113 @@
+html, body {
+    width: 100%; 
+    margin: 0; 
+    padding: 0; 
+}
+
+
+.header {
+    max-width: 100%; 
+    margin: auto;
+    position: fixed;
+    position: -webkit-sticky;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    z-index: 999; 
+    background-color: #f2f2f2;
+    width: 100%;
+}
+
+
+.pasek {
+    max-width: 70%; 
+    margin: auto;
+    position: fixed; /* Ustawienie jako stały element */
+    bottom: 20px; /* Ustawienie na dole strony */
+    left: 50%; /* Wycentrowanie */
+    transform: translateX(-50%);
+    text-align: center;
+    padding-top: 50px; /* Dodatkowy odstęp na górze */;
+    z-index: 999; /* Upewnij się, że pasek będzie na wierzchu */
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f2f2f2;
+}
+
+h1 {
+    text-align: center;
+}
+
+form {
+    text-align: center;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.custom-file-upload {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: rgb(241, 234, 234);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.custom-file-upload:hover {
+    background-color: #0056b3;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; 
+    max-width: 90%; 
+    margin: 80px auto 0;
+    z-index: 1; /* Ustawienie z-indexu dla galerii */
+}
+
+
+.image {
+    margin: 5px;
+    flex: 0 0 calc(20% - 20px); /* Trzy zdjęcia w jednym rzędzie */
+}
+
+.image img {
+    width: 100%; /* Obrazy zajmują całą dostępną przestrzeń */
+    height: auto; /* Zachowanie proporcji */
+    max-width: 320px;
+}
+
+.header h2 {
+    font-size: 50px; /* Zwiększenie rozmiaru napisu */
+}
+
+main {
+    margin-top: 100px; /* Dodatkowy margines na górze, aby uniknąć zakrycia przez pasek */
+}

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="static/style.css">
+    <title>Gallery</title>
+    <style>
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            max-width: 70%; 
+            margin: 80px auto 0;
+        }
+
+        .image {
+            margin: 10px;
+        }
+
+        .image img {
+            width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header">
+            {% if username %}
+            <h2>Zdjecia - Szwajcaria 2024</h2>
+            <p>Witaj, {{ username }}!</p>
+            {% endif %}
+        </div>
+    </header>
+    
+    <main>
+        <div class="pasek">
+            <button>
+                <form id="upload-form" action="/upload" method="post" enctype="multipart/form-data">
+                    <label for="file-upload" class="custom-file-upload">
+                        Prześlij zdjęca
+                    </label>
+                    <input id="file-upload" type="file" name="file" multiple accept=".jpg, .jpeg, .png, .gif" onchange="confirmUpload()">
+                </form>
+            </button>
+
+            <button onclick="downloadFiles()">Pobierz wszystkie pliki jako ZIP</button>
+            <script>
+                function submitForm() {
+                    document.getElementById("upload-form").submit();
+                }
+
+                function confirmUpload() {
+                    if (confirm("Czy na pewno chcesz przesłać te pliki?")) {
+                        submitForm();
+                    } else {
+                        document.getElementById("file-upload").value = "";
+                    }
+                }
+
+                function downloadFiles() {
+                    window.location.href = "/download";
+                }
+            </script>
+            <br>
+        </div>
+        <div style="height: 100px;"></div>
+        <div class="gallery">
+            {% for image in webp_images %}
+                <div class="image">
+                    <img src="/webp_images/{{ image }}" alt="{{ image }}">
+                </div>
+            {% endfor %}
+        </div>
+    </main>
+</body>
+</html>
